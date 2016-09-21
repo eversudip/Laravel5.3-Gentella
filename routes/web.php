@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Backend'], function () {
+
+    Route::get('admin/dashboard', 'DashBoardController@index')->name('dashbaord');
+
+   
 });
