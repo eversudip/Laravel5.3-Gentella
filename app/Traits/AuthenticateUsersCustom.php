@@ -22,4 +22,21 @@ trait AuthenticateUsersCustom
     {
         redirect()->intended($this->redirectPath());
     }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->flush();
+
+        $request->session()->regenerate();
+
+        return redirect($this->redirectOut);
+    }
 }
