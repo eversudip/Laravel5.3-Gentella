@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Traits\AuthenticateUsersCustom;
 
 class LoginController extends Controller
 {
@@ -18,15 +18,15 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticateUsersCustom;
 
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
-
+    protected $redirectTo = '/admin/dashboard';
+   
     /**
      * Create a new controller instance.
      *
