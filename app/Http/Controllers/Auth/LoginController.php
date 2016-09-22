@@ -21,12 +21,19 @@ class LoginController extends Controller
     use AuthenticateUsersCustom;
 
     /**
-     * Where to redirect users after login / registration.
+     * Where to redirect users after login.
      *
      * @var string
      */
     protected $redirectTo = '/admin/dashboard';
-   
+
+    /**
+     * Where to redirect users after logout.
+     *
+     * @var string
+     */
+    protected $redirectOut = '/user/login';
+
     /**
      * Create a new controller instance.
      *
