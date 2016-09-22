@@ -1,0 +1,1 @@
+thanks for registering with us dear {{ $user->name }}.
