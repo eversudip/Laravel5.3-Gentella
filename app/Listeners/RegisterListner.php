@@ -42,8 +42,8 @@ class RegisterListner
 
     /**
      * Generate the confirmation url for the user activation
-     * @param  [type] $user [description]
-     * @return [string]     [description]
+     * @param  \App\Models\User  $user
+     * @return string $url
      */
     protected function generateConfirmationUrl($user)
     {

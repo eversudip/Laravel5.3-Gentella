@@ -44,7 +44,7 @@ trait RegisterUserCustom
     /**
      * Store the new user
      * @param  \Illuminate\Http\Request  $request
-     * @return \App\Models\User  $user
+     * @return \App\Models\User  $user->id
      */
     protected function registerUser($request)
     {
