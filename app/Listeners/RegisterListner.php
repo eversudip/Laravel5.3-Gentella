@@ -47,7 +47,7 @@ class RegisterListner
      */
     protected function generateConfirmationUrl($user)
     {
-        $url = url('/').'/register/confirm/'.$user->confirmation_code;
+        $url = url('/').'register/confirm/'.$user->confirmation_code;
         return $url;
     }
 }
