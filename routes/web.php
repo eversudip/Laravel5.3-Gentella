@@ -34,6 +34,7 @@ Route::group(['namespace' => 'Auth'], function () {
      */
     Route::get('user/register', 'RegisterController@showRegistrationForm');
     Route::post('user/register', 'RegisterController@register');
+    Route::get('register/confirm/{confirmationCode}', 'RegisterController@confirmEmail')
 
     /**
      * Password reset Routes
