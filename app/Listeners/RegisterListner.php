@@ -30,12 +30,24 @@ class RegisterListner
     public function handle(RegistrationMailSend $event)
     {
         $user = $event->user;
+        $confirmationUrl = $this->generateConfirmationUrl($user);
 
-         Mail::send('auth.emails.registerConfirmation', ['user' => $user, 'content' => ''], function ($message) use ($user)
+         Mail::send('auth.emails.registerConfirmation', ['user' => $user, 'url' => $confirmationUrl ], function ($message) use ($user)
             {
 
-                $message->to($user->email);
+                $message->to($user->email)->subject('Please verify the email');
 
             }); 
+    }
+
+    /**
+     * Generate the confirmation url for the user activation
+     * @param  [type] $user [description]
+     * @return [string]     [description]
+     */
+    protected function generateConfirmationUrl($user)
+    {
+        $url = url('/').'/register/confirm/'.$user->confirmation_code;
+        return $url;
     }
 }
