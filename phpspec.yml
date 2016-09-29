@@ -1,0 +1,6 @@
+suites:
+  repo_suite:
+    namespace: Repo
+    src_path: app
+    spec_path: app
+    spec_prefix: spec
